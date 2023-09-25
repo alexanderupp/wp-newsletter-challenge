@@ -1,0 +1,174 @@
+/** COLOR IDs FOR LATER **/
+/** POPUP FORM WRAPPER **/
+#wnc-popup {
+  align-items: center;
+  /* Fallback for non rgba browsers. Which should be none at this point */
+  background-color: var(--wp--preset--color--white);
+  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  left: 0px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 99;
+}
+#wnc-popup.wnc-popup--hidden {
+  display: none;
+}
+#wnc-popup .wnc-form {
+  border-radius: 5px;
+  box-shadow: 0px 5px 35px -5px rgba(0, 0, 0, 0.2);
+  max-height: calc(100vh - 60px);
+  max-width: 640px;
+  position: relative;
+  width: calc(100% - 60px);
+  z-index: 1;
+}
+#wnc-popup .wnc-form__content {
+  overflow-y: auto;
+}
+
+/** MAIN FORM **/
+.wnc-form {
+  /** DEFINE OUR COLORS **/
+  --color-accent:#9dff20;
+  --color-aqua:#1cd5ed;
+  --color-black:#101010;
+  --color-gray:#E0E0E0;
+  --color-lime:#9dff20;
+  --color-orange:#ff6900;
+  --color-white:#FFFFFF;
+  align-items: stretch;
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  /** Scope the accent colors **/
+}
+.wnc-form__content {
+  background-color: var(--color-white);
+  flex: 1 0 50%;
+  padding: 2em;
+  position: relative;
+}
+.wnc-form__form {
+  position: relative;
+}
+.wnc-form__form::after {
+  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 0px;
+  content: "";
+  cursor: wait;
+  display: none;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.wnc-form__form.submitting::after {
+  display: block;
+}
+.wnc-form__form.submitting .wnc-form--button {
+  background-color: var(--color-gray);
+}
+.wnc-form__image {
+  /** default bg color **/
+  align-items: center;
+  background-color: var(--color-accent);
+  display: flex;
+  flex: 0 1 50%;
+  justify-content: center;
+}
+.wnc-form__image img {
+  display: block;
+  max-width: 100%;
+}
+@media screen and (max-width: 640px) {
+  .wnc-form__image {
+    display: none;
+  }
+}
+.wnc-form__status {
+  color: var(--color-red);
+  display: block;
+}
+.wnc-form.accent-aqua {
+  --color-accent:var(--color-aqua);
+}
+.wnc-form.accent-black {
+  --color-accent:var(--color-black);
+}
+.wnc-form.accent-gray {
+  --color-accent:var(--color-gray);
+}
+.wnc-form.accent-lime {
+  --color-accent:var(--color-lime);
+}
+.wnc-form.accent-orange {
+  --color-accent:var(--color-orange);
+}
+.wnc-form.accent-white {
+  --color-accent:var(--color-white);
+}
+.wnc-form.accent-white .wnc-form--button {
+  border: 1px solid var(--color-black);
+}
+.wnc-form.form-inline {
+  border: 1px solid var(--color-black);
+}
+.wnc-form.image--left {
+  flex-direction: row;
+}
+.wnc-form.image--right {
+  flex-direction: row-reverse;
+}
+.wnc-form--button {
+  background-color: var(--color-accent);
+  border: 0px;
+  border-radius: 2px;
+  display: block;
+  font: inherit;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  width: 100%;
+}
+.wnc-form--button:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+}
+.wnc-form--h2 {
+  font-size: 1.5rem;
+  font-weight: inherit;
+  margin: 0px 0px 1em 0px;
+}
+.wnc-popup--close {
+  cursor: pointer;
+  display: block;
+  font-family: monospace;
+  padding: 0.25rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  z-index: 9;
+}
+
+/** FORM CLASSES **/
+.form-field--label {
+  cursor: pointer;
+}
+.form-field--text {
+  border: 1px solid var(--color-black);
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: block;
+  font: inherit;
+  margin-bottom: 0.5em;
+  padding: 0.25rem;
+  transition: border-color 0.3s ease-out;
+  width: 100%;
+}
+.form-field--text:focus {
+  border-color: var(--color-accent);
+}
